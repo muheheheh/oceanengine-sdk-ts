@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["source", "syncedAt", "matched", "total", "docs"],
+  "properties": {
+    "source": { "type": "string", "format": "uri" },
+    "syncedAt": { "type": "string", "format": "date-time" },
+    "matched": { "type": "integer", "minimum": 0 },
+    "total": { "type": "integer", "minimum": 0 },
+    "docs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["title", "url", "docId", "labelId", "identifyKey", "category"],
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "docId": { "type": "string" },
+          "labelId": { "type": "string" },
+          "identifyKey": { "type": "string" },
+          "category": { "type": "string" }
+        }
+      }
+    }
+  }
+}

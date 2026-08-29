@@ -1,0 +1,41 @@
+{
+  "name": "oceanengine-sdk-ts",
+  "version": "0.1.1",
+  "description": "TypeScript SDK for the Ocean Engine Open API",
+  "author": "張熠 <hi@shinrin.me>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muheheheh/oceanengine-sdk-ts.git"
+  },
+  "homepage": "https://github.com/muheheheh/oceanengine-sdk-ts#readme",
+  "bugs": {
+    "url": "https://github.com/muheheheh/oceanengine-sdk-ts/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "docs:sync": "node scripts/sync-docs.mjs",
+    "generate": "node scripts/generate.mjs",
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "license": "Apache-2.0"
+}

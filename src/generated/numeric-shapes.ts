@@ -121,7 +121,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AdConvertSignalV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "AdCostProtectStatusGetV2Response": {
@@ -448,7 +451,19 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AdvConvertOleConvertV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "AdvConvertOleConvertV2ResponseData"
+      }
+    }
+  },
+  "AdvConvertOleConvertV2ResponseData": {
+    "fields": {
+      "order_infos": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "AdvertiserAttachmentUploadV30Request": {
@@ -1229,7 +1244,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AdvertiserQualificationSubmitV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "AdvertiserTransferableFundGetV2Response": {
@@ -1244,7 +1262,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AdvertiserUpdateBudgetV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "AdvertiserVerifyInfoGetV30Response": {
@@ -2268,7 +2289,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AicElementDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "AicElementGetV30Filtering": {
@@ -2318,7 +2342,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AicElementUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "AicElementUploadV30Request": {
@@ -2601,12 +2628,25 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AnalyticsAttributionV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "AssetsCreativeComponentCreateV2Request": {
     "fields": {
-      "advertiser_id": "int64"
+      "advertiser_id": "int64",
+      "component_info": {
+        "ref": "AssetsCreativeComponentCreateV2RequestComponentInfo"
+      }
+    }
+  },
+  "AssetsCreativeComponentCreateV2RequestComponentInfo": {
+    "fields": {
+      "component_data": {
+        "record": "unknown"
+      }
     }
   },
   "AssetsCreativeComponentCreateV2Response": {
@@ -2650,6 +2690,9 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AssetsCreativeComponentGetV2ResponseDataListInner": {
     "fields": {
+      "component_data": {
+        "record": "unknown"
+      },
       "component_id": "int64"
     }
   },
@@ -2664,7 +2707,17 @@ export const numericModels: Record<string, NumericShape> = {
   "AssetsCreativeComponentUpdateV2Request": {
     "fields": {
       "advertiser_id": "int64",
-      "component_id": "int64"
+      "component_id": "int64",
+      "component_info": {
+        "ref": "AssetsCreativeComponentUpdateV2RequestComponentInfo"
+      }
+    }
+  },
+  "AssetsCreativeComponentUpdateV2RequestComponentInfo": {
+    "fields": {
+      "component_data": {
+        "record": "unknown"
+      }
     }
   },
   "AssetsCreativeComponentUpdateV2Response": {
@@ -2721,12 +2774,18 @@ export const numericModels: Record<string, NumericShape> = {
     "fields": {
       "advertiser_id": "int64",
       "file_size": "int64",
-      "task_id": "int64"
+      "task_id": "int64",
+      "task_params": {
+        "record": "unknown"
+      }
     }
   },
   "AsyncTaskDownloadV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "AsyncTaskGetV2Filtering": {
@@ -2746,6 +2805,11 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "AsyncTaskGetV2ResponseData": {
     "fields": {
+      "list": {
+        "array": {
+          "record": "unknown"
+        }
+      },
       "page_info": {
         "ref": "AsyncTaskGetV2ResponseDataPageInfo"
       }
@@ -3065,7 +3129,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandAdCancelDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandAdDeleteV30Request": {
@@ -3079,7 +3146,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandAdDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandAdGetV30Response": {
@@ -3257,7 +3327,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandAdUpdateBaseInfoV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandAdUpdateDeliveryInfoV30Request": {
@@ -3276,7 +3349,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandAdUpdateDeliveryInfoV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandAnchorListV30Page": {
@@ -3357,7 +3433,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandCampaignDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandCampaignEditV30Request": {
@@ -3368,7 +3447,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandCampaignEditV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandCampaignGetV30Response": {
@@ -3482,7 +3564,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandCampaignOperateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandCampaignRemoveV30Request": {
@@ -3726,7 +3811,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandCreativeDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandCreativeGetV30Response": {
@@ -4188,7 +4276,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "BrandCreativeUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "BrandCustomAudienceListV30Response": {
@@ -5058,6 +5149,11 @@ export const numericModels: Record<string, NumericShape> = {
       "district_info": {
         "ref": "BrandOrderListV30ResponseDataOrdersInnerAudienceInfoDistrictInfo"
       },
+      "hot_spot_event_list": {
+        "array": {
+          "record": "unknown"
+        }
+      },
       "retargeting_info": {
         "ref": "BrandOrderListV30ResponseDataOrdersInnerAudienceInfoRetargetingInfo"
       }
@@ -5837,7 +5933,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "CampaignUpdateV2ResponseData": {
     "fields": {
-      "campaign_id": "int64"
+      "campaign_id": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "CarouselAdGetV2Response": {
@@ -5873,6 +5972,9 @@ export const numericModels: Record<string, NumericShape> = {
     "fields": {
       "height": "int64",
       "size": "int64",
+      "url": {
+        "record": "unknown"
+      },
       "width": "int64"
     }
   },
@@ -6049,7 +6151,10 @@ export const numericModels: Record<string, NumericShape> = {
     "fields": {
       "brand_name_id": "int64",
       "cdp_brand_id": "int64",
-      "ecom_brand_id": "int64"
+      "ecom_brand_id": "int64",
+      "sub_brand_map": {
+        "record": "unknown"
+      }
     }
   },
   "CgTransferCanTransferBalanceGetV30Response": {
@@ -6759,7 +6864,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ClueCaInterfaceUpdateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ClueCaUpdateV2Request": {
@@ -6770,7 +6878,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ClueCaUpdateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ClueCouponCodeConsumeV2Request": {
@@ -6780,6 +6891,9 @@ export const numericModels: Record<string, NumericShape> = {
       "coupon_id": "int64",
       "employee": {
         "ref": "ClueCouponCodeConsumeV2RequestEmployee"
+      },
+      "extra": {
+        "record": "unknown"
       },
       "resource_id": "int64"
     }
@@ -7614,7 +7728,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "CommonResponse": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "CreateProjectInvoiceV2Request": {
@@ -8868,6 +8985,11 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DiagnosisTaskAdvCreateV2ResponseData": {
     "fields": {
+      "fail_video_ids": {
+        "record": {
+          "record": "unknown"
+        }
+      },
       "task_ids": {
         "array": "int64"
       }
@@ -8960,6 +9082,11 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DiagnosisTaskAgentCreateV2ResponseData": {
     "fields": {
+      "fail_video_ids": {
+        "record": {
+          "record": "unknown"
+        }
+      },
       "task_ids": {
         "array": "int64"
       }
@@ -9075,7 +9202,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DmpCustomAudienceDeleteV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "DmpCustomAudiencePublishV2Request": {
@@ -9086,7 +9216,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DmpCustomAudiencePublishV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "DmpCustomAudiencePushV2V2Request": {
@@ -9100,7 +9233,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DmpCustomAudiencePushV2V2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "DmpCustomAudienceReadV2Response": {
@@ -9457,7 +9593,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DouplusOrderRenewV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "DouplusOrderReportV30Filter": {
@@ -9587,7 +9726,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DouplusRtaSetScopeV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "DownloadStatementEsignFileV2Response": {
@@ -9854,7 +9996,28 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DpaCategoryGetV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "DpaCategoryGetV2ResponseData"
+      }
+    }
+  },
+  "DpaCategoryGetV2ResponseData": {
+    "fields": {
+      "list": {
+        "array": {
+          "ref": "DpaCategoryGetV2ResponseDataListInner"
+        }
+      }
+    }
+  },
+  "DpaCategoryGetV2ResponseDataListInner": {
+    "fields": {
+      "subs": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "DpaCheckIndexEntryProgressV2Request": {
@@ -10089,12 +10252,45 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DpaDictGetV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "DpaDictGetV2ResponseData"
+      }
+    }
+  },
+  "DpaDictGetV2ResponseData": {
+    "fields": {
+      "list": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "DpaEbpCategoryGetV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "DpaEbpCategoryGetV30ResponseData"
+      }
+    }
+  },
+  "DpaEbpCategoryGetV30ResponseData": {
+    "fields": {
+      "list": {
+        "array": {
+          "ref": "DpaEbpCategoryGetV30ResponseDataListInner"
+        }
+      }
+    }
+  },
+  "DpaEbpCategoryGetV30ResponseDataListInner": {
+    "fields": {
+      "subs": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "DpaEbpClueProductDeleteV30Request": {
@@ -10283,7 +10479,19 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DpaEbpDictGetV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "DpaEbpDictGetV30ResponseData"
+      }
+    }
+  },
+  "DpaEbpDictGetV30ResponseData": {
+    "fields": {
+      "list": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "DpaEbpLibraryListV30Response": {
@@ -10343,7 +10551,19 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DpaEbpMetaGetV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "DpaEbpMetaGetV30ResponseData"
+      }
+    }
+  },
+  "DpaEbpMetaGetV30ResponseData": {
+    "fields": {
+      "list": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "DpaEbpPlayletAuthGetV30Response": {
@@ -10556,7 +10776,19 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DpaMetaGetV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "DpaMetaGetV2ResponseData"
+      }
+    }
+  },
+  "DpaMetaGetV2ResponseData": {
+    "fields": {
+      "list": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "DpaOfflineProductBatchDeleteV30Request": {
@@ -10650,7 +10882,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "DpaProductDeleteV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "DpaProductDetailGetV2Filtering": {
@@ -10911,7 +11146,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "EbpAdvertiserTaskDownloadV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "EbpAdvertiserTaskListV2Response": {
@@ -10955,6 +11193,11 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "EbpLevelGetV2ResponseDataSubTeamInner": {
     "fields": {
+      "sub_team": {
+        "array": {
+          "record": "unknown"
+        }
+      },
       "team_id": "int64"
     }
   },
@@ -11095,7 +11338,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "EventManagerAuthDisableV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "EventManagerAuthEnableV2Request": {
@@ -11228,7 +11474,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "EventManagerEventsCreateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "EventManagerOptimizedGoalGetV2V30Response": {
@@ -11388,7 +11637,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "EventManagerTrackUrlCreateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "EventManagerTrackUrlGetV2Response": {
@@ -11440,7 +11692,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "EventManagerTrackUrlUpdateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "FileAudioAdV2Request": {
@@ -12068,7 +12323,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "FileRebateCommonDownloadDownloadFileV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "FileRebateCommonDownloadGetDownloadTaskListV2Response": {
@@ -12657,7 +12915,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "InvoiceApplyOrderCreateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "InvoiceApplyOrderListV30Response": {
@@ -13087,6 +13348,11 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalActionCategoryV30ResponseData": {
     "fields": {
+      "children": {
+        "array": {
+          "record": "unknown"
+        }
+      },
       "num": "int64"
     }
   },
@@ -13282,7 +13548,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalAudiencePackageUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "LocalAwemeAuthCancelUpdateV30Request": {
@@ -13293,7 +13562,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalAwemeAuthCancelUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "LocalAwemeAuthCreateV30Request": {
@@ -13303,7 +13575,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalAwemeAuthCreateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "LocalAwemeAuthListV30Response": {
@@ -13347,7 +13622,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalAwemeAuthRenewCreateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "LocalAwemeAuthorizedGetV30Response": {
@@ -13831,7 +14109,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalImAutoSettingUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "LocalImCardGetV30Response": {
@@ -13925,7 +14206,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalImSendMsgV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "LocalImUploadImageV30Request": {
@@ -14968,7 +15252,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalProjectUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "LocalProjectWeekScheduleUpdateV30Request": {
@@ -15396,7 +15683,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "LocalPromotionUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "LocalQualificationGetV30Response": {
@@ -16175,7 +16465,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "NativeAnchorDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "NativeAnchorGetDetailV30Response": {
@@ -16732,7 +17025,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "OcProjectMaterialCreateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "OcProjectMaterialDeleteV30Request": {
@@ -16746,7 +17042,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "OcProjectMaterialDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "OcProjectMaterialGetV30Response": {
@@ -17167,7 +17466,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "OcProjectToolsAudienceUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "OcProjectToolsCompensateHistoryListGetV30Response": {
@@ -18814,6 +19116,11 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "PromotionEasyKeepDeliverySwitchUpdateV30ResponseDataResult": {
     "fields": {
+      "error": {
+        "record": {
+          "record": "unknown"
+        }
+      },
       "success_ids": {
         "array": "int64"
       }
@@ -19130,7 +19437,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "PromotionMaterialDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "PromotionNameUpdateV30Request": {
@@ -19566,7 +19876,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanAccountBudgetUpdateV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanAdBidUpdateV10Request": {
@@ -20364,7 +20677,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanAdMaterialDeleteV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanAdMaterialGetV10Response": {
@@ -21363,7 +21679,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanAwemeOrderBudgetAddV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanAwemeOrderCreateV10Request": {
@@ -21866,7 +22185,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanAwemeUniPromotionOrderBudgetAddV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanAwemeUniPromotionOrderCreateV10Request": {
@@ -23960,6 +24282,11 @@ export const numericModels: Record<string, NumericShape> = {
     "fields": {
       "page_info": {
         "ref": "QianchuanReportLongTransferOrderDataGetV10ResponseDataPageInfo"
+      },
+      "rows": {
+        "array": {
+          "ref": "QianchuanReportLongTransferOrderDataGetV10ResponseDataRowsInner"
+        }
       }
     }
   },
@@ -23969,6 +24296,20 @@ export const numericModels: Record<string, NumericShape> = {
       "page_size": "int64",
       "total_number": "int64",
       "total_page": "int64"
+    }
+  },
+  "QianchuanReportLongTransferOrderDataGetV10ResponseDataRowsInner": {
+    "fields": {
+      "dimensions": {
+        "record": {
+          "record": "unknown"
+        }
+      },
+      "metrics": {
+        "record": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "QianchuanReportLongTransferOrderGetV10Response": {
@@ -24212,6 +24553,11 @@ export const numericModels: Record<string, NumericShape> = {
     "fields": {
       "page_info": {
         "ref": "QianchuanReportTodayLiveRoomDataGetV10ResponseDataPageInfo"
+      },
+      "rows": {
+        "array": {
+          "ref": "QianchuanReportTodayLiveRoomDataGetV10ResponseDataRowsInner"
+        }
       }
     }
   },
@@ -24221,6 +24567,20 @@ export const numericModels: Record<string, NumericShape> = {
       "page_size": "int64",
       "total_number": "int64",
       "total_page": "int64"
+    }
+  },
+  "QianchuanReportTodayLiveRoomDataGetV10ResponseDataRowsInner": {
+    "fields": {
+      "dimensions": {
+        "record": {
+          "record": "unknown"
+        }
+      },
+      "metrics": {
+        "record": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "QianchuanReportUniPromotionConfigGetV10Response": {
@@ -24295,6 +24655,11 @@ export const numericModels: Record<string, NumericShape> = {
     "fields": {
       "page_info": {
         "ref": "QianchuanReportUniPromotionDataGetV10ResponseDataPageInfo"
+      },
+      "rows": {
+        "array": {
+          "ref": "QianchuanReportUniPromotionDataGetV10ResponseDataRowsInner"
+        }
       }
     }
   },
@@ -24304,6 +24669,20 @@ export const numericModels: Record<string, NumericShape> = {
       "page_size": "int64",
       "total_number": "int64",
       "total_page": "int64"
+    }
+  },
+  "QianchuanReportUniPromotionDataGetV10ResponseDataRowsInner": {
+    "fields": {
+      "dimensions": {
+        "record": {
+          "record": "unknown"
+        }
+      },
+      "metrics": {
+        "record": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "QianchuanReportUniPromotionDimensionDataAuthorGetV10Response": {
@@ -24923,7 +25302,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanToolsShopAuthV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanToolsSmartBoostAdBoostReportGetV10Response": {
@@ -24958,7 +25340,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanToolsSmartBoostAdBoostSetV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanToolsSmartBoostAdBoostStatusGetV10Response": {
@@ -25610,7 +25995,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanUniPromotionAdControlTaskSmartControlCreateV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanUniPromotionAdControlTaskSmartControlStatusUpdateV10Request": {
@@ -25621,7 +26009,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanUniPromotionAdControlTaskSmartControlStatusUpdateV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanUniPromotionAdControlTaskStatusUpdateV10Request": {
@@ -25930,7 +26321,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanUniPromotionAdMaterialAddV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanUniPromotionAdMaterialDeleteV10Request": {
@@ -25944,7 +26338,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanUniPromotionAdMaterialDeleteV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanUniPromotionAdMaterialGetV10Response": {
@@ -26086,7 +26483,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanUniPromotionAdNameUpdateV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanUniPromotionAdProductDeleteV10Request": {
@@ -26100,7 +26500,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanUniPromotionAdProductDeleteV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanUniPromotionAdProductGetV10Response": {
@@ -26340,7 +26743,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "QianchuanUniPromotionAuthInitV10Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "QianchuanUniPromotionAuthorizableShopListV10Response": {
@@ -27729,8 +28135,20 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportAudienceAwemeListV2ResponseData": {
     "fields": {
+      "list": {
+        "array": {
+          "ref": "ReportAudienceAwemeListV2ResponseDataListInner"
+        }
+      },
       "page_info": {
         "ref": "ReportAudienceAwemeListV2ResponseDataPageInfo"
+      }
+    }
+  },
+  "ReportAudienceAwemeListV2ResponseDataListInner": {
+    "fields": {
+      "metrics": {
+        "record": "unknown"
       }
     }
   },
@@ -27808,8 +28226,20 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportAudienceInterestActionListV2ResponseData": {
     "fields": {
+      "list": {
+        "array": {
+          "ref": "ReportAudienceInterestActionListV2ResponseDataListInner"
+        }
+      },
       "page_info": {
         "ref": "ReportAudienceInterestActionListV2ResponseDataPageInfo"
+      }
+    }
+  },
+  "ReportAudienceInterestActionListV2ResponseDataListInner": {
+    "fields": {
+      "metrics": {
+        "record": "unknown"
       }
     }
   },
@@ -28406,7 +28836,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportCustomAsyncTaskDownloadV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ReportCustomAsyncTaskGetV30Filtering": {
@@ -28418,7 +28851,17 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportCustomAsyncTaskGetV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "ReportCustomAsyncTaskGetV30ResponseData"
+      }
+    }
+  },
+  "ReportCustomAsyncTaskGetV30ResponseData": {
+    "fields": {
+      "page_info": {
+        "record": "unknown"
+      }
     }
   },
   "ReportCustomConfigGetV30Response": {
@@ -28696,7 +29139,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportProductAsyncTaskDownloadV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ReportProductAsyncTaskGetV30Request": {
@@ -28716,7 +29162,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportProductAsyncTaskGetV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ReportProductDailyAsyncTaskCreateV30Request": {
@@ -28739,7 +29188,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportProductDailyAsyncTaskCreateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ReportProductHourlyAsyncTaskCreateV30Request": {
@@ -28762,7 +29214,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportProductHourlyAsyncTaskCreateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ReportReportLiveRoomAudiencePortraitGetV30Filtering": {
@@ -29054,7 +29509,17 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ReportSitePageV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "ReportSitePageV2ResponseData"
+      }
+    }
+  },
+  "ReportSitePageV2ResponseData": {
+    "fields": {
+      "site_record": {
+        "record": "unknown"
+      }
     }
   },
   "ReportStardeliveryTaskDataGetV30Filtering": {
@@ -29675,7 +30140,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "SharedWalletSubWalletCreateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "SharedWalletTransactionDetailGetV30Response": {
@@ -30133,7 +30601,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarAttributeItemEventFeedbackV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarAttributeJdOverflowConvertV2Request": {
@@ -30147,7 +30618,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarAttributeJdOverflowConvertV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarAttributeUserEventFeedbackV2Request": {
@@ -30159,7 +30633,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarAttributeUserEventFeedbackV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarAttributeUserInfoFeedbackV2Request": {
@@ -30171,7 +30648,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarAttributeUserInfoFeedbackV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarBillGetPendingV2Response": {
@@ -30307,7 +30787,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarChallengeAddBudgetV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarChallengeAuthorListV2Response": {
@@ -30351,7 +30834,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarChallengeCancelV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarChallengeChooseTaskItemWithRewardV2Request": {
@@ -30373,7 +30859,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarChallengeChooseTaskItemWithRewardV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarChallengeExpandRangeV2Request": {
@@ -30401,7 +30890,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarChallengeExpandRangeV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarChallengeGetCustomTaskDataV2Response": {
@@ -30793,7 +31285,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarChallengePushItemsToAdV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarChallengeSyncItemToAdV2Request": {
@@ -31864,7 +32359,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarDemandOmExpandChallengeV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarDemandOmGetChallengeDispatchedProviderListV2Response": {
@@ -32154,7 +32652,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarDemandSearchWordModifyV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarDemanderDemanderGetAuthorBindInfoV2Response": {
@@ -32295,7 +32796,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarDemanderUploadCpsTaskSalesV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarFeCommonServiceTalentDayGetCheckInCodeV2Response": {
@@ -33190,7 +33694,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarMcnProviderHandleJoinedAuthorV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarMcnProviderUploadSearchItemV2Request": {
@@ -33204,7 +33711,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarMcnProviderUploadSearchItemV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarMcnRecuritProviderGetTaskOrderListGetV2Response": {
@@ -33254,7 +33764,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarOrderApproveResourceV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarOrderDemanderCancelV2Request": {
@@ -33266,7 +33779,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarOrderDemanderCancelV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarOrderDetailV2Response": {
@@ -33375,7 +33891,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarOrderFinishV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarOrderGetCancelAmountV2Response": {
@@ -33827,7 +34346,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarOrderPublishResourceV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarOrderPushResourceV2Request": {
@@ -33842,7 +34364,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarOrderPushResourceV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarOrderRejectResourceV2Request": {
@@ -33855,7 +34380,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarOrderRejectResourceV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarOrderReplyAuthorCancelV2Request": {
@@ -33867,7 +34395,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarOrderReplyAuthorCancelV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarOrderUpdateV2Request": {
@@ -33888,7 +34419,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarOrderUpdateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarProjectListV2Response": {
@@ -34530,7 +35064,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarTaskBindProjectV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarTaskListByProjectV2Response": {
@@ -34576,7 +35113,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarUpdateProjectV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarUserGetAwemeAuthorIdV2Response": {
@@ -34620,7 +35160,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarVasAppendOrderToBoostItemGroupV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarVasCancelBoostItemGroupV2Request": {
@@ -34631,7 +35174,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StarVasCancelBoostItemGroupV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StarVasCreateBoostItemGroupV2Request": {
@@ -34949,7 +35495,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StardeliveryTaskAuthorVideoAuditV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StardeliveryTaskAuthorVideoDetailV30Filtering": {
@@ -35001,7 +35550,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StardeliveryTaskBudgetUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StardeliveryTaskCancelV30Request": {
@@ -35012,7 +35564,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StardeliveryTaskCancelV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StardeliveryTaskDetailV30Response": {
@@ -35124,7 +35679,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "StardeliveryTaskPostEndTimeUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "StardeliveryTaskShareV30Request": {
@@ -35762,6 +36320,9 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "SuggWordsV30ResponseData": {
     "fields": {
+      "err": {
+        "record": "unknown"
+      },
       "list": {
         "array": {
           "ref": "SuggWordsV30ResponseDataListInner"
@@ -36284,7 +36845,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsAppManagementAndroidBasicPackagePublishV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsAppManagementAndroidBasicPackageUpdateV2Request": {
@@ -36306,7 +36870,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsAppManagementAndroidBasicPackageUpdateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsAppManagementAppGetV2Response": {
@@ -36667,7 +37234,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsAppManagementExtendPackageUpdateV2V2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsAppManagementHarmonyAppListV2Response": {
@@ -36795,7 +37365,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsAppManagementUpdateAuthorizationV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsAppManagementUploadTaskCreateV2Request": {
@@ -36926,7 +37499,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsAwemeAuthCancelV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsAwemeAuthListV2Filtering": {
@@ -36986,7 +37562,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsAwemeAuthRenewalV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsAwemeAuthV2Request": {
@@ -37586,7 +38165,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsClueCallbackV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsClueClueOverviewQueryV2Response": {
@@ -37667,7 +38249,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsClueExtInfoCallbackV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsClueFormDetailV2Response": {
@@ -37757,8 +38342,14 @@ export const numericModels: Record<string, NumericShape> = {
       "clue_source": "int64",
       "clue_state": "int64",
       "clue_type": "int64",
+      "extra_info": {
+        "record": "unknown"
+      },
       "gender": "int64",
       "promotion_id": "int64",
+      "remark_dict": {
+        "record": "unknown"
+      },
       "store": {
         "ref": "ToolsClueGetV2ResponseDataListInnerStore"
       }
@@ -37854,7 +38445,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsClueLifeCallbackV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsClueLifeGetV2Request": {
@@ -38182,7 +38776,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsClueRobotTaskCancelV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsClueRobotTaskCreateV2Request": {
@@ -38466,7 +39063,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsCommentStickOnTopV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsCommentTermsBannedAddV30Request": {
@@ -38476,7 +39076,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsCommentTermsBannedAddV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsCommentTermsBannedDeleteV30Request": {
@@ -38486,7 +39089,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsCommentTermsBannedDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsCommentTermsBannedGetV30Response": {
@@ -38519,7 +39125,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsCommentTermsBannedUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsCountryInfoV2Response": {
@@ -38686,7 +39295,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsEbpAppExtendUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsEbpAppGameBookListV30Response": {
@@ -38767,7 +39379,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsEbpAppPublishV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsEbpAppUpdateV30Request": {
@@ -38789,7 +39404,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsEbpAppUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsEbpAssetAuthCancelV30Request": {
@@ -38802,7 +39420,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsEbpAssetAuthCancelV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsEbpAssetAuthListV30Response": {
@@ -38977,7 +39598,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsEbpMaterialAuthDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsEbpMaterialAuthListV30Response": {
@@ -39989,6 +40613,9 @@ export const numericModels: Record<string, NumericShape> = {
   "ToolsEbpWechatAppletUpdateV30Request": {
     "fields": {
       "account_id": "int64",
+      "data": {
+        "record": "unknown"
+      },
       "head": {
         "ref": "ToolsEbpWechatAppletUpdateV30RequestHead"
       },
@@ -40148,6 +40775,9 @@ export const numericModels: Record<string, NumericShape> = {
   "ToolsEbpWechatGameUpdateV30Request": {
     "fields": {
       "account_id": "int64",
+      "data": {
+        "record": "unknown"
+      },
       "head": {
         "ref": "ToolsEbpWechatGameUpdateV30RequestHead"
       },
@@ -40932,7 +41562,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsKeywordsBidRatioDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsKeywordsBidRatioGetV30Filtering": {
@@ -40975,7 +41608,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsKeywordsBidRatioUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsKeywordsProjectInfoGetV30Response": {
@@ -41094,7 +41730,17 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsLandingGroupSiteOptStatusUpdateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "ToolsLandingGroupSiteOptStatusUpdateV2ResponseData"
+      }
+    }
+  },
+  "ToolsLandingGroupSiteOptStatusUpdateV2ResponseData": {
+    "fields": {
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsLandingGroupUpdateV2Request": {
@@ -41363,7 +42009,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsMaterialRaiseStopV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsMicroAppCreateV30Request": {
@@ -41452,7 +42101,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsMicroGameConvertWindowUpdateV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsMicroGameCreateV30Request": {
@@ -42093,6 +42745,11 @@ export const numericModels: Record<string, NumericShape> = {
       },
       "project_error_list": {
         "array": "int64"
+      },
+      "project_list": {
+        "array": {
+          "record": "unknown"
+        }
       }
     }
   },
@@ -42133,6 +42790,11 @@ export const numericModels: Record<string, NumericShape> = {
       },
       "project_error_list": {
         "array": "int64"
+      },
+      "project_list": {
+        "array": {
+          "record": "unknown"
+        }
       }
     }
   },
@@ -42173,6 +42835,11 @@ export const numericModels: Record<string, NumericShape> = {
       },
       "promotion_error_list": {
         "array": "int64"
+      },
+      "promotion_list": {
+        "array": {
+          "record": "unknown"
+        }
       }
     }
   },
@@ -42213,6 +42880,11 @@ export const numericModels: Record<string, NumericShape> = {
       },
       "promotion_error_list": {
         "array": "int64"
+      },
+      "promotion_list": {
+        "array": {
+          "record": "unknown"
+        }
       }
     }
   },
@@ -42339,7 +43011,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsPromotionRaiseSetV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsPromotionRaiseStatusCurrentIdsGetV30Response": {
@@ -42389,7 +43064,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsPromotionRaiseStopV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsPromotionRaiseVersionGetV30Response": {
@@ -42546,7 +43224,19 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsRtaScopeGetV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "ToolsRtaScopeGetV30ResponseData"
+      }
+    }
+  },
+  "ToolsRtaScopeGetV30ResponseData": {
+    "fields": {
+      "list": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "ToolsRtaSetScopeV2Request": {
@@ -42560,7 +43250,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsRtaSetScopeV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsRtaStatusUpdateV2Request": {
@@ -42573,7 +43266,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsRtaStatusUpdateV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsRubeexPlayableAdListV2Response": {
@@ -42866,7 +43562,19 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsSiteReadV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "ref": "ToolsSiteReadV2ResponseData"
+      }
+    }
+  },
+  "ToolsSiteReadV2ResponseData": {
+    "fields": {
+      "bricks": {
+        "array": {
+          "record": "unknown"
+        }
+      }
     }
   },
   "ToolsSiteTemplateCreateV2Request": {
@@ -43412,7 +44120,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "ToolsTaskRaiseStatusStopV2Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "ToolsThirdSiteDeleteV2Request": {
@@ -44291,8 +45002,29 @@ export const numericModels: Record<string, NumericShape> = {
   "YuntuAudienceInfoCreateV30Request": {
     "fields": {
       "advertiser_id": "int64",
+      "calculate_pools": {
+        "array": {
+          "ref": "YuntuAudienceInfoCreateV30RequestCalculatePoolsInner"
+        }
+      },
       "service_provider_id": "int64",
       "yuntu_brand_id": "int64"
+    }
+  },
+  "YuntuAudienceInfoCreateV30RequestCalculatePoolsInner": {
+    "fields": {
+      "tags": {
+        "array": {
+          "ref": "YuntuAudienceInfoCreateV30RequestCalculatePoolsInnerTagsInner"
+        }
+      }
+    }
+  },
+  "YuntuAudienceInfoCreateV30RequestCalculatePoolsInnerTagsInner": {
+    "fields": {
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "YuntuAudienceInfoCreateV30Response": {
@@ -44318,7 +45050,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "YuntuAudienceInfoDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "YuntuAudienceInfoGetV30Response": {
@@ -44388,7 +45123,10 @@ export const numericModels: Record<string, NumericShape> = {
   },
   "YuntuAudienceLabelDeleteV30Response": {
     "fields": {
-      "code": "int64"
+      "code": "int64",
+      "data": {
+        "record": "unknown"
+      }
     }
   },
   "YuntuAudienceLabelGetV30Response": {

@@ -1,7 +1,7 @@
 import { isLosslessNumber, parse, stringify } from 'lossless-json';
 import { numericModels } from './generated/numeric-shapes.js';
 
-export type NumericShape = 'int64' | { ref: string } | { array: NumericShape } |
+export type NumericShape = 'int64' | 'unknown' | { ref: string } | { array: NumericShape } |
   { record: NumericShape } | { fields: Record<string, NumericShape> };
 
 function resolveShape(shape?: NumericShape): NumericShape | undefined {
@@ -11,6 +11,7 @@ function resolveShape(shape?: NumericShape): NumericShape | undefined {
 
 function childShape(shape: NumericShape | undefined, key: string): NumericShape | undefined {
   shape = resolveShape(shape);
+  if (shape === 'unknown') return shape;
   if (!shape || typeof shape === 'string') return undefined;
   if ('array' in shape) return shape.array;
   if ('record' in shape) return shape.record;
@@ -38,7 +39,7 @@ export function parseJson(text: string, shape?: NumericShape): unknown {
     current = resolveShape(current);
     if (isLosslessNumber(value)) {
       const number = Number(value.value);
-      return current === 'int64' && !Number.isSafeInteger(number) ? BigInt(value.value) : number;
+      return (current === 'int64' || current === 'unknown' && /^-?\d+$/.test(value.value)) && !Number.isSafeInteger(number) ? BigInt(value.value) : number;
     }
     if (Array.isArray(value)) return value.map((item, index) => convert(item, childShape(current, String(index))));
     if (value && typeof value === 'object') {

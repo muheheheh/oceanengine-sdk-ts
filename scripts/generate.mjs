@@ -211,6 +211,7 @@ function goTypeToTs(input, namespace = '') {
 function numericShape(input) {
   const type = stripPointer(input.trim());
   if (type === 'int64' || type === 'uint64') return 'int64';
+  if (type === 'interface{}' || type === 'any') return 'unknown';
   if (type.startsWith('[]')) return { array: numericShape(type.slice(2)) };
   if (type.startsWith('map[')) return { record: numericShape(type.slice(type.indexOf(']') + 1)) };
   if (/^(?:string|bool|u?int(?:8|16|32)?|float32|float64|byte|interface\{\}|any|time\.Time|FormFile|os\.File)$/.test(type)) return undefined;
@@ -235,7 +236,7 @@ function collectNumericModel(source) {
 
 function generateNumericShapes(items) {
   const reachable = new Set();
-  const containsInteger = (shape) => shape === 'int64' || (shape && (
+  const containsInteger = (shape) => (shape === 'int64' || shape === 'unknown') || (shape && (
     (shape.ref && reachable.has(shape.ref)) ||
     containsInteger(shape.array) || containsInteger(shape.record) ||
     Object.values(shape.fields ?? {}).some(containsInteger)
@@ -249,7 +250,7 @@ function generateNumericShapes(items) {
   } while (changed);
   const prune = (shape) => {
     if (!containsInteger(shape)) return undefined;
-    if (shape === 'int64' || shape.ref) return shape;
+    if (shape === 'int64' || shape === 'unknown' || shape.ref) return shape;
     if (shape.array) return { array: prune(shape.array) };
     if (shape.record) return { record: prune(shape.record) };
     return { fields: Object.fromEntries(Object.entries(shape.fields).filter(([, s]) => containsInteger(s)).map(([k, s]) => [k, prune(s)])) };

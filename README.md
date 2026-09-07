@@ -50,7 +50,7 @@ const result = await client.projectListV30({
 const projectIds = result.data?.list?.map(project => String(project.project_id));
 ```
 
-SDK 将 `bigint` 序列化为不带引号的 JSON 数字，覆盖 POST、GET 嵌套参数及表单。生成方法和 `execute` 按上游模型解析响应：64 位整数字段在安全范围内返回 `number`，超出范围返回 `bigint`；浮点数、字符串和数值枚举保持各自类型。传入不安全的 `number` 会在发送请求前报错，因为已经丢失的精度无法恢复。
+SDK 将 `bigint` 序列化为不带引号的 JSON 数字，覆盖 POST、GET 嵌套参数及表单。生成方法和 `execute` 按上游模型解析响应：64 位整数字段在安全范围内返回 `number`，超出范围返回 `bigint`；浮点数、字符串和数值枚举保持各自类型。上游模型中的通用 JSON（`unknown`）也会保留不安全整数为 `bigint`，包括动态报表维度与组织树深层节点（0.2.1 修正）。传入不安全的 `number` 会在发送请求前报错，因为已经丢失的精度无法恢复。
 
 业务 JSON 协议如需字符串 ID，请在 SDK 边界使用 `String(id)`。不要直接对包含 `bigint` 的响应调用 `JSON.stringify`。底层 `request` 没有接口模型信息，JSON 响应保留普通 `number` 行为；无损调用应使用生成方法或 `execute`。
 

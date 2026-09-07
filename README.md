@@ -6,7 +6,7 @@
 - 10,573 个请求、响应模型与枚举
 - 支持 GET、JSON POST、文件上传和二进制下载
 - 方法注释包含官方 API 文档地址
-- 支持 Node.js 18+ 和 Bun，零运行时依赖
+- 支持 Node.js 18+ 和 Bun，使用 lossless-json 处理 64 位整数
 
 ## 安装
 
@@ -35,6 +35,24 @@ console.log(result.data?.list);
 ```
 
 每个 API 都有独立的请求类型、响应类型、方法注释和官方文档链接。
+
+### 64 位整数（0.2.0）
+
+Go 模型中的 `int64/uint64` 生成 `Int64 = number | bigint`。安全范围内的整数仍可传 `number`；大整数 ID 应从字符串构造 `bigint`，不能先经过 `Number(id)`。
+
+```ts
+const result = await client.projectListV30({
+  advertiser_id: BigInt('1864603190230040'),
+  filtering: { ids: [BigInt('9223372036854775807')] },
+  page: 1,
+  page_size: 20,
+});
+const projectIds = result.data?.list?.map(project => String(project.project_id));
+```
+
+SDK 将 `bigint` 序列化为不带引号的 JSON 数字，覆盖 POST、GET 嵌套参数及表单。生成方法和 `execute` 按上游模型解析响应：64 位整数字段在安全范围内返回 `number`，超出范围返回 `bigint`；浮点数、字符串和数值枚举保持各自类型。传入不安全的 `number` 会在发送请求前报错，因为已经丢失的精度无法恢复。
+
+业务 JSON 协议如需字符串 ID，请在 SDK 边界使用 `String(id)`。不要直接对包含 `bigint` 的响应调用 `JSON.stringify`。底层 `request` 没有接口模型信息，JSON 响应保留普通 `number` 行为；无损调用应使用生成方法或 `execute`。
 
 ### 获取 Access Token
 
@@ -104,6 +122,19 @@ HTTP 请求失败会抛出 `OceanEngineApiError`，其中包含 `status`、`head
 - 获取原始响应：`client.executeWithResponse(endpoint, request)`
 - 调用未生成接口：`client.request(request)`
 - 查询文档地址：`endpoints.ProjectListV30.docsUrl`
+
+## 生成与构建
+
+生成源为官方 `oceanengine/ad_open_sdk_go` 的 `v1.1.93`。默认读取相邻的 `../ad_open_sdk_go`，可通过 `OCEANENGINE_GO_SDK` 指定路径。
+
+```bash
+npm ci
+npm run generate
+npm run build
+npm pack --dry-run
+```
+
+修改生成规则应编辑 `scripts/generate.mjs`，传输和编解码逻辑分别在 `src/client.ts`、`src/json.ts`。`src/generated/` 中的方法、模型、endpoint 和整数元数据均应重新生成，不直接编辑。发布时生成文件与生成器一同提交。
 
 ## License
 

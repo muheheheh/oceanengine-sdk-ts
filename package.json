@@ -1,6 +1,6 @@
 {
   "name": "oceanengine-sdk-ts",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "TypeScript SDK for the Ocean Engine Open API",
   "author": "張熠 <hi@shinrin.me>",
   "repository": {
@@ -37,5 +37,8 @@
   "devDependencies": {
     "typescript": "^5.9.2"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "lossless-json": "^4.3.0"
+  }
 }

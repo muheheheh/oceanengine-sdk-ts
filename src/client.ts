@@ -1,3 +1,6 @@
+import { endpointNumericShapes } from './generated/numeric-shapes.js';
+import { parseJson, stringifyJson, validateIntegers, type NumericShape } from './json.js';
+
 import {
   endpoints,
   type EndpointName,
@@ -142,6 +145,8 @@ export class OceanEngineClient {
     options: RequestOptions = {},
   ): Promise<OceanEngineResponse<EndpointResponseMap[K]>> {
     const definition = endpoints[endpoint];
+    const numericShape = endpointNumericShapes[endpoint];
+    validateIntegers(request, numericShape.request);
     const common: CommonRequest = {
       ...options,
       method: definition.method,
@@ -164,7 +169,7 @@ export class OceanEngineClient {
       ) as Record<string, UploadFile>;
     }
 
-    return this.requestWithResponse<EndpointResponseMap[K]>(common);
+    return this.performRequest<EndpointResponseMap[K]>(common, numericShape.response);
   }
 
   async request<T = unknown>(request: CommonRequest): Promise<T> {
@@ -173,6 +178,10 @@ export class OceanEngineClient {
   }
 
   async requestWithResponse<T = unknown>(request: CommonRequest): Promise<OceanEngineResponse<T>> {
+    return this.performRequest<T>(request);
+  }
+
+  private async performRequest<T>(request: CommonRequest, responseShape?: NumericShape): Promise<OceanEngineResponse<T>> {
     const url = new URL(request.path, `${this.baseUrl}/`);
     appendQuery(url.searchParams, request.query);
 
@@ -195,7 +204,7 @@ export class OceanEngineClient {
       body = createFormData(request.form, request.files);
     } else if (request.body !== undefined) {
       headers.set('Content-Type', 'application/json');
-      body = JSON.stringify(request.body);
+      body = stringifyJson(request.body);
     }
 
     const rateLimitContext: OceanEngineRateLimitContext = {
@@ -234,7 +243,7 @@ export class OceanEngineClient {
         data = new Uint8Array(await response.arrayBuffer()) as T;
       } else {
         const text = await response.text();
-        data = (request.responseType === 'text' ? text : text ? JSON.parse(text) : undefined) as T;
+        data = (request.responseType === 'text' ? text : text ? parseJson(text, responseShape) : undefined) as T;
       }
       return { data, response };
     } catch (error) {
@@ -254,7 +263,7 @@ function appendQuery(searchParams: URLSearchParams, query?: Record<string, unkno
   if (!query) return;
   for (const [key, value] of Object.entries(query)) {
     if (value === undefined || value === null) continue;
-    searchParams.append(key, typeof value === 'string' ? value : JSON.stringify(value));
+    searchParams.append(key, typeof value === 'string' ? value : stringifyJson(value)!);
   }
 }
 
@@ -265,7 +274,7 @@ function createFormData(
   const data = new FormData();
   for (const [key, value] of Object.entries(form ?? {})) {
     if (value === undefined || value === null) continue;
-    data.append(key, typeof value === 'string' ? value : JSON.stringify(value));
+    data.append(key, typeof value === 'string' ? value : stringifyJson(value)!);
   }
   for (const [key, file] of Object.entries(files ?? {})) {
     if (file instanceof Blob) data.append(key, file);
